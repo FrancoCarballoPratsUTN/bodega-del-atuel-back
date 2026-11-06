@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     database_name: str = "bodega_del_atuel"
     database_user: str = "rol_api_lectura_escritura"
     database_password: str
+    database_sslmode: str = "prefer"
     database_pool_min_size: int = 1
     database_pool_max_size: int = 10
     model_config = SettingsConfigDict(
@@ -23,7 +24,7 @@ class Settings(BaseSettings):
         return (
             f"host={self.database_host} port={self.database_port} "
             f"dbname={self.database_name} user={self.database_user} "
-            f"password={self.database_password}"
+            f"password={self.database_password} sslmode={self.database_sslmode}"
         )
 
 
